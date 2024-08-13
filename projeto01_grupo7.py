@@ -3,7 +3,7 @@ import sys
 import datetime
 import pandas as pd
 
-# Exemplo do dicionário Morse (defina isso de acordo com suas necessidades)
+# Definição do dicionário Morse
 dict_morse = {
     ".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E", 
     "..-.": "F", "--.": "G", "....": "H", "..": "I", ".---": "J", 
@@ -22,12 +22,16 @@ def decode_morse(msg):
     input : mensagem em código morse com as letras separadas por espaços
     output : palavra escrita em letras e algarismos
     '''
-    msg_lst = msg.split("   ")  # Palavras são separadas por três espaços
+    # Divide a mensagem em palavras usando três espaços
+    msg_lst = msg.split("   ")
     msg_claro = []
     for word in msg_lst:
-        letters = word.split(" ")  # Letras são separadas por um espaço
-        decoded_word = ''.join([dict_morse[letter] for letter in letters])
+        # Divide cada palavra em letras usando um espaço
+        letters = word.split(" ")
+        # Decodifica cada letra e adiciona à palavra decodificada
+        decoded_word = ''.join([dict_morse.get(letter, '?') for letter in letters])
         msg_claro.append(decoded_word)
+    # Une todas as palavras decodificadas
     return ' '.join(msg_claro)
 
 def save_clear_msg_csv_hdr(msg_claro):
