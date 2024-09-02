@@ -1,0 +1,11 @@
+{
+  "cols_chaves": ["id_voo"],
+  "tipos_originais": {"year": "int", "month": "int", "day": "int", "datetime_partida": "str", "datetime_chegada": "str"},
+  "cols_originais": ["year", "month", "day", "datetime_partida", "datetime_chegada"],
+  "cols_renamed": ["year", "month", "day", "datetime_partida", "datetime_chegada"],
+  "std_str": ["datetime_partida", "datetime_chegada"],
+  "corrige_hr": ["datetime_partida", "datetime_chegada"],
+  "null_tolerance": 0.1,
+  "cols_chaves": ["id_voo"],
+  "tabela": ["nyflights"]
+}
